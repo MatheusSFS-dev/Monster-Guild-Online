@@ -34,6 +34,10 @@
         <div class="header-left">
             <h1>AquaTech</h1>
 
+            <div id="foto_perfil">
+                
+            </div>
+
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
@@ -81,6 +85,15 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    foto.innerHTML = sessionStorage.SPRITE;
+
+    if(foto.innerHTML == 1) {
+        foto_perfil.innerHTML = `HOMEM`
+    } 
+     if(foto.innerHTML == 2) {
+        foto_perfil.innerHTML = `MULHER`
+    } 
+  
 
     let proximaAtualizacao;
 

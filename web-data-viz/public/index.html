@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monster Guild Online</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="icon" href="img/logo-site.png">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="icon" href=".img/logo-site.png">
     
 </head>
 <body>
@@ -34,8 +34,45 @@
   <button onclick="location.href='cadastro.html'">Cadastre-se</button>
 </div>
 
+<div class="container-right">
+    <button>Saiba mais</button>
+</div>
 
 
 </body>
 </html>
+
+<script>
+document.addEventListener('mousemove', (e) => {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+
+    // Posição inicial no cursor
+    const x = e.clientX;
+    const y = e.clientY;
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
+
+    // Movimento orgânico e aleatório (flutuar)
+    const xMove = (Math.random() - 0.5) * 100; // -50 a +50 px (lado)
+    const yMove = (Math.random() - 1) * 120;   // -120 a 0 px (mais pra cima)
+
+    particle.style.setProperty('--x-move', `${xMove}px`);
+    particle.style.setProperty('--y-move', `${yMove}px`);
+
+    // Tamanho variável (profundidade)
+    const size = Math.random() * 4 + 4; // 4px até 8px
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    document.body.appendChild(particle);
+
+    // Remove após a animação
+    setTimeout(() => {
+        particle.remove();
+    }, 2500);
+});
+
+// Cria uma partícula a cada 300ms
+</script>
 
