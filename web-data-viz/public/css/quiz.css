@@ -1,5 +1,10 @@
 /* Não usar pure white or pure black: https://uxplanet.org/basicdesign-never-use-pure-black-in-typography-36138a3327a6 */
 /* The 4-point grid system: https://medium.com/@sainzkike/controlling-spacing-in-design-systems-multiple-spacing-9bf1afec87f */
+*{
+    margin: 0;
+    padding: 0;
+    
+}
 
 :root {
     --primary-brand-color: #ED145B;
@@ -24,6 +29,9 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    height: 100%
+
 }
 
 #pontuacaoEJogo {
@@ -106,3 +114,43 @@ button {
 .text-new-gray {
     color: var(--new-gray);
 }
+
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 10%;
+    background-color: rgba(60, 60, 60);
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+   
+}
+
+.logo {
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+
+.nav_links li a {
+   transition: all 0.3s ease 0s;
+   color: white;
+   letter-spacing: 1px;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   text-decoration: none;
+}
+
+
+.nav_links li a:hover {
+   transition: all 0.3s ease 0s;
+   color: rgb(112, 231, 112);
+}
+

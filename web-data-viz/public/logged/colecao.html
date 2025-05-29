@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Guild Online</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="icon" href=".img/logo-site.png" <script src="../js/sessao.js">
+    </script>
+
+</head>
+
+<body>
+    <!--Inicio do Header-->
+    <header>
+        <nav>
+            <ul class="nav_links">
+                <!--
+                Itens de Navbar
+            -->
+                <li><a href="home.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="colecao.html">Coleção</a></li>
+                <li><a href="info.html">Informações</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--Fim do Header-->
+
+    <div id="colecionavel" class="container_conteudo">
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+
+<script>
+const imagensDisponiveis = [
+  { id: 'img1', src: '../assets/img/sprites/m_1.png' },
+  { id: 'img2', src: '../assets/img/sprites/m_2.png' },
+  { id: 'img3', src: '../assets/img/sprites/m_3.png' },
+  { id: 'img4', src: '../assets/img/sprites/m_4.png' },
+];
+
+const container = document.querySelector('.container_conteudo');
+
+imagensDisponiveis.forEach(imagem => {
+  if (sessionStorage.getItem(imagem.id)) {
+    const img = document.createElement('img');
+    img.src = imagem.src;
+    img.classList.add('result-image');
+    container.appendChild(img);
+    
+  }
+});
+</script>
+

@@ -1,41 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monster Guild Online</title>
     <link rel="stylesheet" href="../css/home.css">
-    <link rel="icon" href=".img/logo-site.png"
-    <script src="../js/sessao.js"></script>
-    
+    <link rel="icon" href=".img/logo-site.png">
+     <script src="../js/sessao.js"></script>
+
 </head>
-<body>
- <!--Inicio do Header-->
-<header>
-    <nav>
-        <ul class="nav_links">
-            <!--
+
+<body onload="validarSessao()">
+    <!--Inicio do Header-->
+    <header>
+        <nav>
+            <ul class="nav_links">
+                <!--
                 Itens de Navbar
             -->
-            <li><a href="home.html">Home</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="index.html">Build</a></li>
-            <li><a href="index.html">Informações</a></li>
-        </ul>
-    </nav>
-</header>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="colecao.html">Coleção</a></li>
+                <li><a href="info.html">Informações</a></li>
+
+                <li><a href="../index.html">Sair</a></li>
+        </nav>
+    </header>
     <!--Fim do Header-->
 
+      <div class="banner"></div>
+
+      <div class="content">
+        <h2>Bem-vindo, <span id="b_usuario">Hello</span></h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis blanditiis recusandae labore, esse animi harum obcaecati? Facere eius quae corporis autem reprehenderit! Modi ab voluptatum, necessitatibus officia quae natus nisi.</p>
+        
+
+    </div>
+    <div id="colecionavel" class="container_feliz">
+        <img src="../assets/img/sprites/m_1.png" class="clickable-image" data-id="img1">
+        <img src="../assets/img/sprites/m_2.png" class="clickable-image" data-id="img2">
+        <img src="../assets/img/sprites/m_3.png" class="clickable-image" data-id="img3">
+        <img src="../assets/img/sprites/m_4.png" class="clickable-image" data-id="img4">
+    </div>
 
 
 
 
 </body>
+
 </html>
 
 <script>
+    const container = document.querySelector('.container_feliz');
 
- 
-// Cria uma partícula a cada 300ms
+    // Remove do DOM as imagens que já estão no sessionStorage
+    document.querySelectorAll('.clickable-image').forEach(img => {
+        const id = img.dataset.id;
+        if (sessionStorage.getItem(id)) {
+            img.remove();
+        }
+    });
+
+    // Evento de clique nas imagens
+    container.addEventListener('click', (e) => {
+        if (e.target.classList.contains('clickable-image')) {
+            const img = e.target;
+            const id = img.dataset.id;
+
+            // Salva no sessionStorage como selecionada
+            sessionStorage.setItem(id, true);
+
+            // Anima e remove
+            img.classList.add('animate');
+            img.addEventListener('animationend', () => {
+                img.remove();
+            }, { once: true });
+        }
+    });
 </script>
-
