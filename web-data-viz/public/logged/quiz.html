@@ -303,5 +303,21 @@
         // btnConcluir.disabled = true
         btnTentarNovamente.disabled = false
 
+        
+    // Enviando o valor da nova input
+    fetch("/quiz/marcarPontuacao", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        acertosServer: certas,
+        errosServer: erradas,
+      }),
+    })
+     
+
     }
 </script>

@@ -11,7 +11,7 @@
 
 </head>
 
-<body onload="validarSessao()">
+<body onload="validarSessa()">
     <!--Inicio do Header-->
     <header>
         <nav>
@@ -30,14 +30,20 @@
     <!--Fim do Header-->
 
       <div class="banner"></div>
+      <div class="container_1">
+        Conheça os monstros!
+        <br>
+    <img src="../assets/img/monstro_container.jpg" alt="">
+      </div>
+      <div class="container_2"></div>
+      <div class="container_3"></div>
+
 
       <div class="content">
-        <h2>Bem-vindo, <span id="b_usuario">Hello</span></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis blanditiis recusandae labore, esse animi harum obcaecati? Facere eius quae corporis autem reprehenderit! Modi ab voluptatum, necessitatibus officia quae natus nisi.</p>
-        
-
+        <h1>Bem-vindo, <span id="b_usuario">Hello</span>!</h1>
+        <p></p>
     </div>
-    <div id="colecionavel" class="container_feliz">
+    <div id="colecionavel" class="container_colecionavel">
         <img src="../assets/img/sprites/m_1.png" class="clickable-image" data-id="img1">
         <img src="../assets/img/sprites/m_2.png" class="clickable-image" data-id="img2">
         <img src="../assets/img/sprites/m_3.png" class="clickable-image" data-id="img3">
@@ -52,7 +58,7 @@
 </html>
 
 <script>
-    const container = document.querySelector('.container_feliz');
+    const container = document.querySelector('.container_colecionavel');
 
     // Remove do DOM as imagens que já estão no sessionStorage
     document.querySelectorAll('.clickable-image').forEach(img => {
