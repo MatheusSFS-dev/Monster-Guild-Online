@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monster Guild Online</title>
     <link rel="stylesheet" href="../css/home.css">
-    <link rel="icon" href=".img/logo-site.png">
-     <script src="../js/sessao.js"></script>
+    <link rel="icon" href="../assets/img/logo-site.png">
+    <script src="../js/sessao.js"></script>
 
 </head>
 
-<body onload="validarSessa()">
+<body onload="validarSessao()">
     <!--Inicio do Header-->
     <header>
         <nav>
@@ -22,33 +22,264 @@
                 <li><a href="home.html">Home</a></li>
                 <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="colecao.html">Coleção</a></li>
-                <li><a href="info.html">Informações</a></li>
-
+                <li><a href="../dashboard/dashboard.html">Informações</a></li>
                 <li><a href="../index.html">Sair</a></li>
         </nav>
     </header>
     <!--Fim do Header-->
-
-      <div class="banner"></div>
-      <div class="container_1">
-        Conheça os monstros!
-        <br>
-    <img src="../assets/img/monstro_container.jpg" alt="">
-      </div>
-      <div class="container_2"></div>
-      <div class="container_3"></div>
-
-
-      <div class="content">
-        <h1>Bem-vindo, <span id="b_usuario">Hello</span>!</h1>
-        <p></p>
+    <div class="banner"></div>
+    <div class="container_1">
+        Bestiário
     </div>
-    <div id="colecionavel" class="container_colecionavel">
+
+      <div class="container_2">
+        <a href="bestiarioGame.html">Teste do Caçador</a>
+    </div>
+
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Rathian</h1>
+            <p>Serpe alada presente na Floresta Ancestral com capacidade de atirar chamas em conjunto com um veneno
+                extremamente letal alocado no rabo. É conhecida como a rainha, reinando com Rathalos.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/RATHIAN.jpeg" alt="Monstro">
+        </div>
+    </div>
+
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Barroth</h1>
+            <p>Criatura que patrulha pântanos e cobre seu corpo com lama espessa para proteção. Conhecida por seus
+                ataques em investida.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/BARROTH.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Bazelgeuse</h1>
+            <p>Serpe voadora nômade que infesta o ecossistema, lançando escamas explosivas com comportamento
+                errático.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/BAZELGEUSE.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Diablos</h1>
+            <p>Predador subterrâneo do deserto. Conhecido por seus chifres gigantes e ataques devastadores ao emergir do
+                solo.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/DIABLOS.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Black Diablos</h1>
+            <p>Versão agressiva da Diablos, extremamente territorial e furiosa. Encontra-se apenas durante o cio.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/BLACK DIABLOS.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Dodogama</h1>
+            <p>Monstro pacífico com capacidade de armazenar explosivos na boca. Costuma evitar confrontos diretos.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/DODOGAMA.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Great Girros</h1>
+            <p>Líder de uma alcateia de Girros. Habita áreas escuras e ataca em grupo.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/GREAT GIRROS.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Great Jagras</h1>
+            <p>Monstro de porte médio que engole suas presas inteiras. Costuma ser o primeiro desafio dos caçadores.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/GREAT JAGRAS.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Kulu Ya Ku</h1>
+            <p>Rouba objetos brilhantes e usa pedras como arma improvisada.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/KULU YA KU.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Lavasioth</h1>
+            <p>Habita rios de lava. Seu corpo endurecido o torna resistente, e pode nadar com agilidade em magma.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/LAVASIOTH.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Legiana</h1>
+            <p>Serpe voadora que domina os céus frios. Ataca com gelo e ventos cortantes em manobras ágeis.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/LEGIANA.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Nergigante</h1>
+            <p>Dragão Ancião brutal com espinhos regenerativos. Caça outros dragões anciões.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/NERGIGANTE.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Odogaron</h1>
+            <p>Serpe de presas presente no Vale Putréfato, ataca com ferocidade utilizando de suas garras para se
+                prender nas paredes e atacar sua presa de cima.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/ODOGARON.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Paolumu</h1>
+            <p>Serpe alada que infla seu corpo como balão. Usa o ar comprimido para flutuar e atacar com sopros de vento
+                extremamente potentes.
+            </p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/PAOLUMU.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Pink Rathian</h1>
+            <p>Variante mais agressiva da Rathian, com habilidades letais de veneno e comportamento territorial.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/PINK RATHIAN.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Pukei Pukei</h1>
+            <p>Colorido e venenoso. Usa sua língua longa e cauda para espalhar toxinas enquanto voa pelas florestas.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/PUKEI PUKEI.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Radobaan</h1>
+            <p>Rola entre ossos no Vale Putrefato, acumulando-os no corpo como armadura improvisada.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/RADOBAAN.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Rathalos</h1>
+            <p>Rei dos céus, parceiro da Rathian. Ataca com fogo e garras envenenadas enquanto patrulha territórios
+                aéreos.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/RATHALOS.jpeg" alt="Monstro">
+        </div>
+    </div>
+
+
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Teostra</h1>
+            <p>Dragão ancião localizado na Fenda do Ancião, suas chamas causam evacuações em massa, mudando
+                drasticamente o ambiente no qual se insere.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/TEOSTRA.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Kushala Daora</h1>
+            <p>Dragão envolto por ventos cortantes. Cria tempestades para se defender e dificultar aproximações.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/KUSHALA DAORA.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Vaal Hazak</h1>
+            <p>Habita o Vale Putrefato. Exala um gás mortal que consome a vida ao redor.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/VAAL HAZAK.jpeg" alt="Monstro">
+        </div>
+        <div id="colecionavel" class="container_colecionavel">
         <img src="../assets/img/sprites/m_1.png" class="clickable-image" data-id="img1">
-        <img src="../assets/img/sprites/m_2.png" class="clickable-image" data-id="img2">
-        <img src="../assets/img/sprites/m_3.png" class="clickable-image" data-id="img3">
-        <img src="../assets/img/sprites/m_4.png" class="clickable-image" data-id="img4">
+        </div>
     </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Tzitzi-Ya-Ku</h1>
+            <p>Monstro pequeno e ágil. Usa uma luz cegante emitida dos olhos para imobilizar presas.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/TZITZI YA KU.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Uragaan</h1>
+            <p>Cobre seu corpo com minerais explosivos e ataca com cabeçadas poderosas. Rola para se locomover
+                rapidamente.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/URAGAAN.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Xenojiva</h1>
+            <p>Dragão Ancião misterioso, recém-nascido. Emite energia azul intensa e ataca com feixes de energia.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/XENOJIVA.jpeg" alt="Monstro">
+        </div>
+    </div>
+    <div class="bannerDemo">
+        <div class="banner-texto">
+            <h1>Zorah Magdaros</h1>
+            <p>Colosso vulcânico que caminha lentamente carregando magma em seu corpo. Um verdadeiro evento natural.</p>
+        </div>
+        <div class="banner-imagem">
+            <img src="../assets/img/monstros/ZORAH MAGDAROS.jpeg" alt="Monstro">
+        </div>
+    </div>
+
+
+
 
 
 
@@ -58,9 +289,53 @@
 </html>
 
 <script>
+    const listaMonstros = [
+        "BARROTH",
+        "BAZELGEUSE",
+        "DIABLOS",
+        "BLACK DIABLOS",
+        "DODOGAMA",
+        "GREAT GIRROS",
+        "GREAT JAGRAS",
+        "KULU YA KU",
+        "LAVASIOTH",
+        "LEGIANA",
+        "NERGIGANTE",
+        "ODOGARON",
+        "PAOLUMU",
+        "PINK RATHIAN",
+        "PUKEI PUKEI",
+        "RADOBAAN",
+        "RATHALOS",
+        "RATHIAN",
+        "TEOSTRA",
+        "KUSHALA DAORA",
+        "VAAL HAZAK",
+        "TZITZI-YA-KU",
+        "URAGAAN",
+        "XENOJIVA",
+        "ZORAH MAGDAROS"
+    ]
+    function mostrarMonstro() {
+        var input = input_pesquisa.value;
+        var pesquisa = input.toUpperCase();
+
+        for (var i = 0; i < listaMonstros.length; i++) {
+            if (pesquisa == listaMonstros[i]) {
+                div_monstro.innerHTML =
+                    ` <img src="../assets/img/monstros/${listaMonstros[i]}.jpeg" class="img_monstro"> 
+              
+              
+              `
+            }
+        }
+    }
+
+
+
     const container = document.querySelector('.container_colecionavel');
 
-    // Remove do DOM as imagens que já estão no sessionStorage
+
     document.querySelectorAll('.clickable-image').forEach(img => {
         const id = img.dataset.id;
         if (sessionStorage.getItem(id)) {
@@ -68,20 +343,22 @@
         }
     });
 
-    // Evento de clique nas imagens
+
     container.addEventListener('click', (e) => {
         if (e.target.classList.contains('clickable-image')) {
             const img = e.target;
             const id = img.dataset.id;
 
-            // Salva no sessionStorage como selecionada
             sessionStorage.setItem(id, true);
 
-            // Anima e remove
             img.classList.add('animate');
             img.addEventListener('animationend', () => {
                 img.remove();
             }, { once: true });
+
         }
     });
+
+
+
 </script>

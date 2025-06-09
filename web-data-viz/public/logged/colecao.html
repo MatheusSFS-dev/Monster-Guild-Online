@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monster Guild Online</title>
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="icon" href=".img/logo-site.png" <script src="../js/sessao.js">
+    <title>Coleção</title>
+    <link rel="stylesheet" href="../css/colecao.css">
+    <link rel="icon" href="../assets/img/logo-site.png" <script src="../js/sessao.js">
     </script>
+    <a href="../assets/img/ponto.png"></a>
 
 </head>
 
@@ -22,13 +23,24 @@
                 <li><a href="home.html">Home</a></li>
                 <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="colecao.html">Coleção</a></li>
-                <li><a href="info.html">Informações</a></li>
+                <li><a href="../dashboard/dashboard.html">Informações</a></li>
+                <li><a href="../index.html">Sair</a></li>
             </ul>
         </nav>
     </header>
     <!--Fim do Header-->
 
+    <div class="album">
     <div id="colecionavel" class="container_conteudo">
+    </div>
+    </div>
+
+    <div id="div_resultado">
+     <a href="agradecimentos.html">
+      
+      <div id="imagem"></div>
+    
+    </a>
     </div>
 
 
@@ -47,6 +59,8 @@ const imagensDisponiveis = [
   { id: 'img4', src: '../assets/img/sprites/m_4.png' },
 ];
 
+var total_cartas = 0
+
 const container = document.querySelector('.container_conteudo');
 
 imagensDisponiveis.forEach(imagem => {
@@ -55,8 +69,13 @@ imagensDisponiveis.forEach(imagem => {
     img.src = imagem.src;
     img.classList.add('result-image');
     container.appendChild(img);
-    
+    total_cartas ++
   }
 });
+
+if (total_cartas == imagensDisponiveis.length) {
+imagem.innerHTML = `<img src="../assets/img/ponto.png">`
+}
+
 </script>
 

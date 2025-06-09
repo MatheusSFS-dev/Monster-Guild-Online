@@ -11,8 +11,9 @@
   <script src="./js/sessao.js"></script>
 
   <link rel="stylesheet" href="./css/cadastro.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
   <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link rel="icon" href="./assets/img/logo-site.png">
+  
 </head>
 
 <body>
@@ -27,6 +28,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="cadastro.html">Cadastro </a></li>
             <li><a href="login.html">Login</a></li>
+             <li><a href="sobreMim.html">Sobre mim</a></li>
 
         </ul>
     </nav>
@@ -75,31 +77,14 @@
      <div class="login">
   
       
-    <div class="container_personagem">
-        <!--Items do formulario-->
-          <div class="campo_personagem">
-            <span>Seu </span>    
-            <select id="select_sprite" onchange="change_image()">
-              <option value="./assets/img/perfil1.jpeg">Caçador</option>
-              <option value="./assets/img/perfil3.jpeg">Caçadora</option>
-            </select>      
-          <div id="div_imagem">
-            <img id="perfil" src="" style="width:150px;height:150px;"/> 
-          </div>
-    </div>
-      
    </div>
 
 </body>
 
 </html>
 
-<script type="text/javascript">
-function change_image() {
-  var select = document.getElementById('select_sprite');
-  var img = select.value; // mais simples que selectedIndex
-  document.getElementById('perfil').src = img;
-}
+<script>
+
 
 
   function cadastrar() {
@@ -111,7 +96,7 @@ function change_image() {
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var spriteVar = select_sprite.value;
+  
 
 
     // Verificando se há algum campo em branco
@@ -146,7 +131,6 @@ function change_image() {
         nomeServer: nomeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
-        spriteServer: spriteVar,
       }),
     })
       .then(function (resposta) {

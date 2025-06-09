@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste do Caçador</title>
+    <link rel="stylesheet" href="../css/bestiarioGame.css">
+    <link rel="icon" href="../assets/img/logo-site.png">
+    <script src="../js/sessao.js"></script>
+
+</head>
+
+<body onload="validarSessao()">
+    <!--Inicio do Header-->
+    <header>
+        <nav>
+            <ul class="nav_links">
+                <!--
+                Itens de Navbar
+            -->
+                <li><a href="home.html">Home</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="colecao.html">Coleção</a></li>
+                <li><a href="../dashboard/dashboard.html">Informações</a></li>
+                <li><a href="../index.html">Sair</a></li>
+        </nav>
+    </header>
+    <!--Fim do Header-->
+    <div class="banner"></div>
+    <a href="home.html">
+        <div class="container_1">
+            Bestiário
+        </div>
+    </a>
+
+    <div class="container_2">
+        Teste do Caçador
+    </div>
+
+
+    <div class="content">
+        <br>
+        <h2>Teste seu conhecimento no bestiário!</h2>
+        <br>
+        <div id="timer"></div>
+        <div id="pontos"></div>
+        <div id="conteudo">
+            <p>Neste jogo, irão aparecer dicas, escreva o nome do monstro correspondente o mais rápido que puder em 1
+                minuto!</p>
+            <button onclick="iniciar()">Iniciar Jogo</button>
+        </div>
+    </div>
+
+    <div id="colecionavel" class="container_colecionavel">
+        <img src="../assets/img/sprites/m_4.png" class="clickable-image" data-id="img4">
+        </div>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+    const listaDica = [
+        `Eu corro na lama e adoro bater com a cabeça!`,
+        `Explodo tudo por onde passo, sou um verdadeiro avião de guerra.`,
+        `O apex do deserto.`,
+        `Eu sou a verdadeira rainha de ébano.`,
+        `Como pedras e as derreto em minha boca.`,
+        `Meus ataques paralisam junto com meus iguais.`,
+        `Engulo criaturas inteiras e depois te ataco.`,
+        `Roubo pedras pra me defender... e pareço um ladrão!`,
+        `Nado em lava como se fosse água.`,
+        `Voando no frio, congelo tudo ao meu redor com elegância.`,
+        `Meus espinhos trazem o fim dos dragões.`,
+        `Rápido, cruel, e meus dentes cortam como lâminas.`,
+        `Pareço fofo até começar a flutuar.`,
+        `Sou a versão mais feroz da rainha venenosa.`,
+        `Cuspo veneno e minha língua é bem comprida.`,
+        `Rolei tanto que virei uma bola de ossos.`,
+        `O rei do céu, cuspindo fogo com garras afiadas.`,
+        `A rainha do veneno, famosa por seu rabo traiçoeiro.`,
+        `Trago fogo e explosões como se fosse um deus do sol.`,
+        `Meus ventos mudam ecossistemas.`,
+        `Trago a névoa da morte em bactérias.`,
+        `Deixo todos cegos!`,
+        `Rolei na lava soltando bombas`,
+        `Cheguei recentemente, com energia pura ao meu redor.`,
+        `Sou uma montanha viva.`
+
+
+    ];
+
+    const listaMonstros = [
+        "BARROTH",
+        "BAZELGEUSE",
+        "DIABLOS",
+        "BLACK DIABLOS",
+        "DODOGAMA",
+        "GREAT GIRROS",
+        "GREAT JAGRAS",
+        "KULU YA KU",
+        "LAVASIOTH",
+        "LEGIANA",
+        "NERGIGANTE",
+        "ODOGARON",
+        "PAOLUMU",
+        "PINK RATHIAN",
+        "PUKEI PUKEI",
+        "RADOBAAN",
+        "RATHALOS",
+        "RATHIAN",
+        "TEOSTRA",
+        "KUSHALA DAORA",
+        "VAAL HAZAK",
+        "TZITZI YA KU",
+        "URAGAAN",
+        "XENOJIVA",
+        "ZORAH MAGDAROS"
+
+
+    ];
+
+    let indexAtual;
+    let monstroCorreto;
+    let pontos = 0;
+    let tempo = 60;
+    let contador;
+
+    function gerarNovoMonstro() {
+        indexAtual = parseInt(Math.random() * listaDica.length);
+        monstroCorreto = listaMonstros[indexAtual];
+        dica_texto.innerText = listaDica[indexAtual];
+        div_monstro.innerHTML = "";
+        input_pesquisa.value = "";
+    }
+
+    function iniciar() {
+        pontos = 0;
+        tempo = 30;
+
+        conteudo.innerHTML = `
+            <input type="text" id="input_pesquisa">
+            <button onclick="verificarResposta()">Enviar</button>
+            <div class="container_monstro">
+                <div id="div_monstro"></div>
+                <p id="dica_texto"></p>
+                <p id="timer"></p>
+            </div>
+
+        `;
+
+        gerarNovoMonstro();
+        contador = setInterval(() => {
+            const timer = document.getElementById("timer");
+            timer.innerHTML = `Tempo restante: ${tempo}`;
+            if (tempo <= 0 || listaMonstros.length == 0) {
+                finalizarJogo()
+                clearInterval(contador);
+            }
+            tempo--;
+        }, 1000);
+    }
+
+    function finalizarJogo() {
+        clearInterval(contador);
+        if (tempo <= 0 && pontos <= 5) {
+            timer.innerHTML = ` Tempo esgotado!`;
+            dica_texto.innerHTML =
+                `Você fez ${pontos} pontos!
+                  <br>`
+                  input_pesquisa.disabled = true;
+        } else
+            if (tempo <= 0 && pontos > 5 && pontos < 10) {
+                timer.innerHTML = ` Tempo esgotado!`;
+                dica_texto.innerHTML =
+                    `Você fez ${pontos} pontos, e por ter conseguido mais de 5 monstros, conseguiu mais 2 pontos!
+                  <br>
+                  Total: ${pontos + 2}  
+                    `
+                pontos += 2
+                input_pesquisa.disabled = true;
+
+            } else if (tempo <= 0 && pontos > 10) {
+                `Você fez ${pontos} pontos, e por ter conseguido mais de 10 monstros, conseguiu mais 5 pontos, Parabéns!
+                  <br>
+                  Total: ${pontos + 5}  
+                `
+                pontos += 5
+                div_monstro.innerHTML = "";
+                input_pesquisa.disabled = true;
+
+            } else {
+                dica_texto.innerText = `VOCÊ COMPLETOU O BESTIARIO, COM ${pontos} PONTOS!`;
+                div_monstro.innerHTML = "";
+                input_pesquisa.disabled = true;
+            }
+
+        fetch("/jogo/marcarPartida", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                fkUsuario: sessionStorage.ID_USUARIO,
+                pontosServer: pontos,
+            })
+        })
+    }
+
+    function verificarResposta() {
+        const input = input_pesquisa.value;
+        const resposta = input.toUpperCase();
+
+
+
+        if (resposta == monstroCorreto) {
+            pontos++;   
+            div_monstro.innerHTML = `
+                <p>Acertou!</p>
+            `;
+            listaDica.splice(indexAtual, 1);
+            listaMonstros.splice(indexAtual, 1);
+         if (listaMonstros.length == 0) {
+                div_monstro.innerHTML = `PARABÉNS, VOCÊ ACERTOU TODO O BESTIÁRIO!`
+                finalizarJogo()
+            } else if (listaMonstros.length > 0)  {
+                gerarNovoMonstro()
+            }
+            } else {
+                div_monstro.innerHTML = `<p>Errado! Tente novamente.</p>`;
+        }
+
+
+    }
+
+
+
+
+
+
+    const container = document.querySelector('.container_colecionavel');
+
+
+    document.querySelectorAll('.clickable-image').forEach(img => {
+        const id = img.dataset.id;
+        if (sessionStorage.getItem(id)) {
+            img.remove();
+        }
+    });
+
+
+    container.addEventListener('click', (e) => {
+        if (e.target.classList.contains('clickable-image')) {
+            const img = e.target;
+            const id = img.dataset.id;
+
+            sessionStorage.setItem(id, true);
+
+            img.classList.add('animate');
+            img.addEventListener('animationend', () => {
+                img.remove();
+            }, { once: true });
+
+        }
+    });
+
+
+
+</script>

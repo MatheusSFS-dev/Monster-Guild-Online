@@ -3,93 +3,10 @@
   padding: 0;
 }
 body {
-  background: url(../assets/img/home.jpeg) no-repeat center center fixed;
+  background: url(../assets/img/colecao.jpg) no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
-}
-
-
-
-
-span {
-  display: block;
-  width: 100px;
-  height: 100px;
-  padding: 5px;
-  border: 1px solid blue;    
-  background-color: yellow; 
-}
-
-
-.container {
-  background: rgba(60, 60, 60, 0.4);
-  position: absolute;
-  top: 80%;
-  right: 16%;
-  height: 250px;
-  transform: translateY(-50%);
-  background-color: #44454e;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-  font-family: sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.container p {
-  margin-bottom: 20px;
-  font-size: 18px;
-}
-
-.container button {
-  display: block;
-  width: 100%;
-  padding: 20px;
-  margin: 10px 0;
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.container-right {
-    background: rgba(60, 60, 60, 0.4);
-  position: absolute;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  top: 90%;
-  right: 0%;
-  height: 150px;
-  transform: translateY(-50%);
-  background-color: #44454e;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  color: white;
-  font-family: sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.container-right button {
-   display: block;
-  width: 100%;
-  padding: 20px;
-  margin: 10px 0;
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-
-
-button {
-  background-color: #c8ca8d;
-  color: white;
 }
 
 .clickable-image {
@@ -117,13 +34,28 @@ button {
   }
 }
 
-.container_feliz {
+.container_conteudo {
+  margin-top: 50px  ;
   display: flex;
+
   gap: 20px;
 }
 
-.animate {
-  animation: shineAndFade 0.8s forwards;
+.album {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#div_resultado  {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.imagem {
+  width: 300px;
 }
 
 

@@ -3,7 +3,7 @@
   padding: 0;
 }
 body {
-  background: url(../assets/img/mhw.png) no-repeat center center fixed;
+  background: url(../assets/img/sobreMim.jpg) no-repeat center center fixed;
   background-size: cover;
   overflow: hidden;
 }
@@ -11,27 +11,18 @@ body {
 
 
 
-span .a {
-  display: block;
-  width: 100px;
-  height: 100px;
-  padding: 5px;
-  border: 1px solid blue;    
-  background-color: yellow; 
+img {
+  width: 150px;
 }
 
 
 .container {
   background: rgba(60, 60, 60, 0.4);
-  position: absolute;
-  top: 40%;
-  left: 60px;
-  height: 250px;
-  width: 60%;
-  transform: translateY(-50%);
+  height: 650px;
+  width: 33%;
   background-color: #44454e;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 0px 20px;
   text-align: center;
   color: white;
   font-family: sans-serif;

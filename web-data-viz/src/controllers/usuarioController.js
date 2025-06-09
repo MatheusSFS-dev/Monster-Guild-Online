@@ -1,5 +1,6 @@
 var usuarioModel = require("../models/usuarioModel");
 
+
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -22,7 +23,7 @@ function autenticar(req, res) {
                             email: resultadoAutenticar[0].email,
                             nome: resultadoAutenticar[0].nome,
                             senha: resultadoAutenticar[0].senha,
-                            sprite: resultadoAutenticar[0].sprite,
+
                         });
 } else if (resultadoAutenticar.length == 0) {
     res.status(403).send("Email e/ou senha inválido(s)");
@@ -47,7 +48,7 @@ function cadastrar(req, res) {
     var nome = req.body.nomeServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
-    var sprite = req.body.spriteServer;
+    
 
     // Faça as validações dos valores
     if (nome == undefined) {
@@ -59,7 +60,7 @@ function cadastrar(req, res) {
     }else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, email, senha, sprite)
+        usuarioModel.cadastrar(nome, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
